@@ -1,0 +1,35 @@
+{
+    "name": "pengfeixc.com",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "node --inspect-brk=9300 ./node_modules/next/dist/bin/next -p 3100",
+        "build": "next build",
+        "export": "next export",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@chakra-ui/react": "^1.6.9",
+        "@emotion/react": "^11.4.1",
+        "@emotion/styled": "^11.3.0",
+        "@mdx-js/loader": "^1.6.22",
+        "@mdx-js/react": "^1.6.22",
+        "@next/mdx": "^11.1.2",
+        "framer-motion": "^4.1.17",
+        "moment": "^2.29.1",
+        "next": "11.1.2",
+        "polyfill-object.fromentries": "^1.0.1",
+        "react": "17.0.2",
+        "react-dom": "17.0.2"
+    },
+    "devDependencies": {
+        "@types/mdx-js__react": "^1.5.4",
+        "@types/react": "17.0.27",
+        "eslint": "8.0.0",
+        "eslint-config-next": "11.1.2",
+        "gray-matter": "^4.0.3",
+        "next-mdx-remote": "^3.0.6",
+        "typescript": "4.4.4"
+    }
+}
