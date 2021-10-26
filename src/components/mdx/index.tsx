@@ -1,7 +1,3 @@
-import RawHtml from "./rawHtml";
-
-const mdxComponents: any = {
-    RawHtml
-};
+const mdxComponents: any = {};
 
 export default mdxComponents;
