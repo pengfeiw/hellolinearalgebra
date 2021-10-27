@@ -12,7 +12,7 @@ const Header: React.FC = () => {
         <Flex flexDirection="row" justifyContent="space-between">
             <HStack alignItems="end" gridColumnGap="10px">
                 <a href="http://www.pengfeixc.com" target="_blank">
-                    <AvatarSvg fillColor={colorMode === "light" ? "#9b2c2c" : "#fed7d7"} />
+                    <AvatarSvg />
                 </a>
                 <Text fontSize="18px" fontWeight="bold">Hello, Linear Algebra!</Text>
             </HStack>
