@@ -3,8 +3,9 @@ const withMdxEnhanced = require('next-mdx-enhanced');
 const nodePath = require('path')
 const withPlugins = require('next-compose-plugins')
 
+console.log("process.env.NODE_ENV", process.env.NODE_ENV);
 const nextConfig = {
-    webpack5: false,
+    webpack5: process.env.NODE_ENV === "development",
     pageExtensions: ["js", "jsx", "ts", "tsx", "mdx", "md"]
 }
 
