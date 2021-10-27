@@ -3,10 +3,14 @@ const withMdxEnhanced = require('next-mdx-enhanced');
 const nodePath = require('path')
 const withPlugins = require('next-compose-plugins')
 
-console.log("process.env.NODE_ENV", process.env.NODE_ENV);
+const IsDevelopment = process.env.NODE_ENV === "development";
 const nextConfig = {
-    webpack5: process.env.NODE_ENV !== "development",
-    pageExtensions: ["js", "jsx", "ts", "tsx", "mdx", "md"]
+    webpack5: !IsDevelopment,
+    pageExtensions: ["js", "jsx", "ts", "tsx", "mdx", "md"],
+    webpack: (config) => {
+        config.output.publicPath = IsDevelopment ? "/" : "/hellolinearalgebra";
+        return config;
+    }
 }
 
 module.exports = withPlugins([
