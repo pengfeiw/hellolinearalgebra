@@ -7,10 +7,11 @@ const IsDevelopment = process.env.NODE_ENV === "development";
 const nextConfig = {
     webpack5: !IsDevelopment,
     pageExtensions: ["js", "jsx", "ts", "tsx", "mdx", "md"],
-    webpack: (config) => {
-        config.output.publicPath = IsDevelopment ? "/" : "/hellolinearalgebra";
-        return config;
-    }
+    assetPrefix: IsDevelopment ? "" : "/hellolinearalgebra",
+    // webpack: (config) => {
+    //     config.output.publicPath = IsDevelopment ? "/" : "/hellolinearalgebra";
+    //     return config;
+    // }
 }
 
 module.exports = withPlugins([
