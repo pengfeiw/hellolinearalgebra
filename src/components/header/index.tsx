@@ -1,8 +1,9 @@
 import React from "react";
 import {Flex, HStack, useColorMode, Text, IconButton} from "@chakra-ui/react";
 import AvatarSvg from "./avatar";
-import {ColorModeSwitch} from "../colorModeSwitch";
-import {GithubLink} from "../githubLink";
+import {ColorModeSwitch} from "src/components/colorModeSwitch";
+import {GithubLink} from "src/components/githubLink";
+import {AccentPicker} from "src/components/accent";
 
 const Header: React.FC = () => {
     const {colorMode, toggleColorMode} = useColorMode();
@@ -17,6 +18,10 @@ const Header: React.FC = () => {
             </HStack>
             <HStack>
                 <GithubLink />
+                <AccentPicker
+                    aria-label="Accent Color Picker"
+                    zIndex={1}
+                />
                 <ColorModeSwitch />
             </HStack>
         </Flex>
