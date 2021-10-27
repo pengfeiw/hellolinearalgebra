@@ -14,9 +14,9 @@ export function useLocalSetting<T>(
     const storageKey = name
     const [value, _setValue] = React.useState<T>(() => {
         if (typeof window === "undefined" || defer) {
-            return defaultValue // SSR/SSG
+            return defaultValue; // SSR/SSG
         }
-        const json = window.localStorage.getItem(storageKey)
+        const json = window.localStorage.getItem(storageKey);
         if (!json) {
             return defaultValue
         }

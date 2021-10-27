@@ -60,7 +60,7 @@ export function useAccentStyles(accentKey: ColorKeys, selector: string = '&') {
 }
 
 export const AccentGlobal: React.FC = () => {
-    const [accentKey] = useLocalSetting<ColorKeys>('accent', 'defaultAccent')
+    const [accentKey] = useLocalSetting<ColorKeys>('accent', 'green')
     const accent = theme.colors[accentKey]
     const styles = React.useMemo(
         () => css`
@@ -79,6 +79,6 @@ export const AccentGlobal: React.FC = () => {
       }
     `,
         [accentKey]
-    )
+    );
     return <Global styles={styles} />
 };
