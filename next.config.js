@@ -5,7 +5,7 @@ const withPlugins = require('next-compose-plugins')
 
 console.log("process.env.NODE_ENV", process.env.NODE_ENV);
 const nextConfig = {
-    webpack5: process.env.NODE_ENV === "development",
+    webpack5: process.env.NODE_ENV !== "development",
     pageExtensions: ["js", "jsx", "ts", "tsx", "mdx", "md"]
 }
 
