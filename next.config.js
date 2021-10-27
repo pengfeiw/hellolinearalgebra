@@ -19,6 +19,9 @@ module.exports = withPlugins([
         layoutPath: 'src/layouts',
         defaultLayout: true,
         fileExtensions: ['mdx'],
+        remarkPlugins: [
+            require('remark-slug'),
+        ],
         extendFrontMatter: {
             process: (mdxContent, frontMatter) => {
                 const pagesDir = nodePath.resolve(__dirname, 'src/pages')

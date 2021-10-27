@@ -10,6 +10,7 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@chakra-ui/core": "^0.8.0",
         "@chakra-ui/react": "^1.6.9",
         "@emotion/react": "^11.5.0",
         "@emotion/styled": "^11.3.0",
@@ -26,7 +27,8 @@
         "react": "17.0.2",
         "react-dom": "17.0.2",
         "react-icons": "^4.3.1",
-        "reading-time": "^1.5.0"
+        "reading-time": "^1.5.0",
+        "remark-slug": "^6.1.0"
     },
     "devDependencies": {
         "@types/mdx-js__react": "^1.5.4",

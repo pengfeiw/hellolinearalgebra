@@ -5,7 +5,7 @@ import {ChakraProvider, extendTheme} from "@chakra-ui/react";
 import {ColorModeScript} from "@chakra-ui/react";
 import {theme as defaultTheme} from "src/ui/theme";
 import "polyfill-object.fromentries";
-import mdxComponents from "src/components/mdx";
+import {mdxComponents} from "src/components/article/mdx";
 import {AccentGlobal} from "src/components/accent";
 
 function MyApp({Component, pageProps}: AppProps) {
