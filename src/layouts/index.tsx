@@ -1,15 +1,33 @@
 import React, {FC} from "react";
-import Header from "../components/header";
-import {H1} from "src/components/primitives/typography";
 import {Box} from "@chakra-ui/react";
+import ChaptersLayout from "./chaptersLayout";
+import HomeLayout from "./homeLayout";
+
+type LayoutsName = "chaptersLayout" | "homeLayout";
+
+const layouts:{[key in LayoutsName]: any} = {
+    chaptersLayout: ChaptersLayout,
+    homeLayout: HomeLayout
+};
+
+const getLayout = ({layout, path}: {layout: LayoutsName; path: string}) => {
+    if (layout in Object.keys(layouts)) {
+        return layouts[layout];
+    }
+    if (path.startsWith("/chapters")) {
+        return ChaptersLayout;
+    }
+    return HomeLayout;
+};
 
 const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: any}>) => {
     console.log("frontMatter", frontMatter);
+
+    const SubLayout = getLayout(frontMatter);
+
     return (
-        <Box pt="30px" pb="40px" m="0 auto" maxW="900px" minH="100vh">
-            <Header />
-            <H1>{frontMatter.title}</H1>
-            {children}
+        <Box pt="30px" p="40px 10px" m="0 auto" maxW="900px" minH="100vh">
+            <SubLayout children={children} frontMatter={frontMatter} />
         </Box>
     );
 };

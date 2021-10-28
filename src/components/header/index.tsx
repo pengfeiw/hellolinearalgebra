@@ -1,20 +1,19 @@
 import React from "react";
-import {Flex, HStack, useColorMode, Text, IconButton} from "@chakra-ui/react";
+import {Flex, HStack, Text} from "@chakra-ui/react";
 import AvatarSvg from "./avatar";
 import {ColorModeSwitch} from "src/components/colorModeSwitch";
 import {GithubLink} from "src/components/githubLink";
 import {AccentPicker} from "src/components/accent";
+import {OutgoingLink} from "src/components/link";
 
 const Header: React.FC = () => {
-    const {colorMode, toggleColorMode} = useColorMode();
-
     return (
-        <Flex flexDirection="row" justifyContent="space-between">
+        <Flex flexDirection="row" justifyContent="space-between" mb="40px" wrap="wrap" gridRowGap="15px" gridColumnGap="15px">
             <HStack alignItems="end" gridColumnGap="10px">
-                <a href="http://www.pengfeixc.com" target="_blank">
+                <OutgoingLink href="http://www.pengfeixc.com" target="_blank">
                     <AvatarSvg />
-                </a>
-                <Text fontSize="18px" fontWeight="bold">Hello, Linear Algebra!</Text>
+                </OutgoingLink>
+                <Text fontSize="17px" fontWeight="bold">你好，线性代数!</Text>
             </HStack>
             <HStack>
                 <GithubLink />

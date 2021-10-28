@@ -1,4 +1,4 @@
-import {OutgoingLink, RouteLink} from 'src/components/link';
+import {OutgoingLink, RouteLink} from "src/components/link";
 import {
     Badge,
     BadgeProps,
@@ -12,17 +12,17 @@ import {
     ListItem,
     Text,
     useColorModeValue
-} from '@chakra-ui/react'
-import React from 'react'
-import * as Typography from 'src/components/primitives/typography'
-import {theme, useLinkColor} from 'src/ui/theme'
+} from "@chakra-ui/react"
+import React from "react"
+import * as Typography from "src/components/primitives/typography"
+import {theme, useLinkColor} from "src/ui/theme"
 
 const linkStyles = {
-    '& code': {
-        color: 'currentColor'
+    "& code": {
+        color: "currentColor"
     },
-    '&:hover code': {
-        textDecoration: 'underline'
+    "&:hover code": {
+        textDecoration: "underline"
     }
 }
 
@@ -30,7 +30,7 @@ const InlineCode: React.FC<BoxProps> = p => (
     <Code
         fontSize="0.85em"
         fontWeight="medium"
-        color={useColorModeValue('gray.700', 'gray.300')}
+        color={useColorModeValue("gray.700", "gray.300")}
         px={1}
         rounded="md"
         {...p}
@@ -61,25 +61,15 @@ export const mdxComponents: any = {
             my={8}
             fontSize="lg"
             sx={{
-                '& p:last-child': {
+                "& p:last-child": {
                     mb: 0
                 }
             }}
             fontStyle="italic"
             borderLeftWidth={4}
-            borderLeftColor={useColorModeValue('gray.400', 'gray.600')}
-            rounded={['none', 'sm']}
+            borderLeftColor={useColorModeValue("gray.400", "gray.600")}
+            rounded={["none", "sm"]}
             {...p}
-            _after={{
-                // opening: “
-                content: '"”"',
-                fontFamily: 'serif',
-                position: 'absolute',
-                color: useColorModeValue('gray.400', 'gray.600'),
-                fontSize: '5xl',
-                top: 0,
-                right: 3
-            }}
         />
     ),
     author: ({children, ...p}: any) => (
@@ -92,7 +82,7 @@ export const mdxComponents: any = {
             color="gray.500"
             mt={-2}
             _before={{
-                content: '"-- "'
+                content: "'-- '"
             }}
             {...p}
         >
@@ -102,8 +92,8 @@ export const mdxComponents: any = {
 
     a: (p: any) => {
         const isInternal =
-            p.href.startsWith('#') ||
-            (p.href.startsWith('/') && !p.href.startsWith('/images'))
+            p.href.startsWith("#") ||
+            (p.href.startsWith("/") && !p.href.startsWith("/images"))
         const color = useLinkColor()
         if (isInternal) {
             return <RouteLink to={p.href} color={color} sx={linkStyles} {...p} />
@@ -120,7 +110,7 @@ export const mdxComponents: any = {
         <Text
             fontSize="sm"
             textAlign="center"
-            color={useColorModeValue('gray.600', 'gray.400')}
+            color={useColorModeValue("gray.600", "gray.400")}
             mt={2}
             {...p}
         />
@@ -129,7 +119,7 @@ export const mdxComponents: any = {
     hr: (p: BoxProps) => (
         <Divider
             my={8}
-            borderColor={useColorModeValue('gray.400', 'gray.600')}
+            borderColor={useColorModeValue("gray.400", "gray.600")}
             w="100%"
             {...p}
         />
