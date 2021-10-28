@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../components/header";
 import {Box} from "@chakra-ui/react";
-import {H1} from "src/components/primitives/typography";
 
 const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: any}>) => {
     console.log("frontMatter", frontMatter);
