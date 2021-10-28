@@ -2,6 +2,7 @@ import {ThemeOverride, useColorModeValue} from "@chakra-ui/react"
 import {transparentize} from "@chakra-ui/theme-tools"
 
 // https://www.tailwindcss.cn/docs/customizing-colors
+// 以下颜色使用themera工具生成：https://themera.vercel.app/
 const tailwindColors = {
     gray: {
         50: "#fcfeff",
@@ -178,4 +179,4 @@ export const colors = {
 
 export type ColorKeys = "defaultAccent" | "gray" | "red" | "orange" | "yellow" | "green" | "teal" | "blue" | "indigo" | "cyan" | "purple" | "pink";
 
-export const accentKeys: ColorKeys[] = ["defaultAccent" , "gray" , "red" , "orange" , "yellow" , "green" , "teal" , "blue" , "indigo" , "cyan" , "purple" , "pink"];
+export const accentKeys: ColorKeys[] = ["defaultAccent", "gray", "red", "orange", "yellow", "green", "teal", "blue", "indigo", "cyan", "purple", "pink"];
