@@ -8,7 +8,6 @@ const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: a
     return (
         <Box pt="30px" pb="40px" m="0 auto" maxW="900px" minH="100vh">
             <Header />
-            <H1>{frontMatter.title}</H1>
             {children}
         </Box>
     );
