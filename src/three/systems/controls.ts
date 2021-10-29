@@ -1,8 +1,7 @@
 import * as THREE from 'three';
-// import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
+import {OrbitControls} from "src/three/basic/orbitControls";
 
 function createControls(camera: THREE.Camera, canvas: HTMLElement) {
-    const OrbitControls = require("three/examples/jsm/controls/OrbitControls").OrbitControls;
     const control = new OrbitControls(camera, canvas);
     // control.autoRotate = true;
     // control.autoRotateSpeed = 5;
@@ -19,5 +18,6 @@ function createControls(camera: THREE.Camera, canvas: HTMLElement) {
 
     return control;
 }
+
 
 export {createControls};
