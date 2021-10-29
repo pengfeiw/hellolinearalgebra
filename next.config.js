@@ -18,7 +18,7 @@ module.exports = withPlugins([
     withMdxEnhanced({
         layoutPath: "src/layouts",
         defaultLayout: true,
-        fileExtensions: ["mdx"],
+        fileExtensions: ["mdx", "md"],
         remarkPlugins: [
             require("remark-slug"),
         ],

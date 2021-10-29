@@ -13,7 +13,7 @@ const Header: React.FC = () => {
                 <OutgoingLink href="http://www.pengfeixc.com" target="_blank">
                     <AvatarSvg />
                 </OutgoingLink>
-                <Text fontSize="17px" fontWeight="bold">你好，线性代数!</Text>
+                <Text fontSize="17px" fontWeight="bold">你好，线性代数</Text>
             </HStack>
             <HStack>
                 <GithubLink />

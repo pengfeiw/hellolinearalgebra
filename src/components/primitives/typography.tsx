@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from "react"
 import {
     Text,
@@ -71,11 +72,11 @@ const Heading: React.FC<HeadingProps> = ({
 
 type P = HeadingProps
 
-export const H1: React.FC<P> = p => <Heading as="h1" size="2xl" {...p} />
-export const H2: React.FC<P> = p => <Heading as="h2" size="xl" {...p} />
-export const H3: React.FC<P> = p => <Heading as="h3" size="lg" {...p} />
-export const H4: React.FC<P> = p => <Heading as="h4" size="md" {...p} />
-export const H5: React.FC<P> = p => <Heading as="h5" size="sm" {...p} />
-export const H6: React.FC<P> = p => <Heading as="h6" size="xs" {...p} />
+export const H1: React.FC<P> = p => <Heading as="h1" size="xl" {...p} />
+export const H2: React.FC<P> = p => <Heading as="h2" size="lg" {...p} />
+export const H3: React.FC<P> = p => <Heading as="h3" size="md" {...p} />
+export const H4: React.FC<P> = p => <Heading as="h4" size="sm" {...p} />
+export const H5: React.FC<P> = p => <Heading as="h5" size="xs" {...p} />
+export const H6: React.FC<P> = p => <Heading as="h6" size="2xs" {...p} />
 
 export const Paragraph = (p: BoxProps) => <Text as="p" mb={8} {...p} />
