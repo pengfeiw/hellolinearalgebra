@@ -32,7 +32,6 @@ export const styles: Styles = {
             minWidth: "320px",
             scrollBehavior: "smooth",
             fontSmooth: "auto",
-            "-moz-osx-font-smoothing": "auto"
         },
         "html, body": {
             bg: colorMode === "light" ? "white" : "gray.1000",

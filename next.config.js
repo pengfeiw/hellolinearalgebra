@@ -1,6 +1,8 @@
 const readingTime = require("reading-time")
 const withMdxEnhanced = require("next-mdx-enhanced");
-const nodePath = require("path")
+const nodePath = require("path");
+const nodeFs = require("fs");
+const yaml = require("js-yaml");
 const withPlugins = require("next-compose-plugins")
 
 const IsDevelopment = process.env.NODE_ENV === "development";
@@ -13,6 +15,20 @@ const nextConfig = {
     //     return config;
     // }
 }
+
+const getAllPosts = () => {
+    const postsDir = nodePath.resolve(__dirname, "src/pages/chapters");
+    const files = nodeFs.readdirSync(postsDir);
+    const posts = [];
+    for (let i = 0; i < files.length; i++) {
+        const frontMatter = yaml.loadAll(nodeFs.readFileSync(nodePath.resolve(postsDir, files[i])))[0];
+        posts.push({
+            path: files[i],
+            title: frontMatter.title
+        })
+    }
+    return posts;
+};
 
 module.exports = withPlugins([
     withMdxEnhanced({
@@ -31,12 +47,15 @@ module.exports = withPlugins([
                     .replace(".mdx", "")
                     .replace(".tsx", "")
                     .replace(/^\/index$/, "/")
-                    .replace(/\/index$/, "")
-                return {
+                    .replace(/\/index$/, "");
+                
+                const res = {
                     path,
                     readingTime: readingTime(mdxContent),
+                    allPosts: getAllPosts(),
                     ...frontMatter
                 }
+                return res;
             }
         }
     })

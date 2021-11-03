@@ -27,7 +27,9 @@ const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: a
 
     return (
         <Box pt="30px" p="40px 10px" m="0 auto" maxW="900px" minH="100vh">
-            <SubLayout children={children} frontMatter={frontMatter} />
+            <SubLayout frontMatter={frontMatter}>
+                {children}
+            </SubLayout>
         </Box>
     );
 };
