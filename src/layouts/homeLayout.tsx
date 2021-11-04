@@ -18,7 +18,7 @@ const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: a
             {
                 frontMatter.allPosts.map((post: {path: string; title: string;}) => (
                     <Box key={post.path} mt="10px">
-                        <RouteLink to={`/chapters/${post.path}`} color={linkColor}>
+                        <RouteLink to={`chapters/${post.path}`} color={linkColor}>
                             {post.title}
                         </RouteLink>
                     </Box>
