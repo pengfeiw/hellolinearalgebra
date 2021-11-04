@@ -36,6 +36,9 @@ const CatalogNav: FC<Props> = (props) => {
         setCatalogOpen(true);
     };
 
+    console.log("-----router-----");
+    console.log(router);
+
     const currentIndex = catalogs.findIndex((item) => item.path === path);
 
     return (
