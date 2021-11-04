@@ -1,6 +1,7 @@
 ---
-title: 你好，线性代数
-description: End-to-end encrypted applications use cryptographic keys that don't leave the client, so how do we store them securely in the browser ?
+title: 向量
+description: 初步认识向量
+keywords: 向量,向量的定义,向量的几何意义
 ---
 
 ## 向量

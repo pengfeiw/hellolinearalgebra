@@ -54,13 +54,14 @@ module.exports = withPlugins([
                     .replace(".tsx", "")
                     .replace(/^\/index$/, "/")
                     .replace(/\/index$/, "");
-                
+                const keywords = frontMatter.keywords?.split(",") || [];
                 const res = {
+                    ...frontMatter,
+                    keywords,
                     path,
                     readingTime: readingTime(mdxContent),
                     allPosts: getAllPosts(),
-                    ...frontMatter
-                }
+                };
                 return res;
             }
         }

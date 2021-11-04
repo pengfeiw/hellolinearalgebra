@@ -2,6 +2,7 @@ import React, {FC} from "react";
 import {Box} from "@chakra-ui/react";
 import ChaptersLayout from "./chaptersLayout";
 import HomeLayout from "./homeLayout";
+import {Frontmatter} from "src/components/types";
 
 type LayoutsName = "chaptersLayout" | "homeLayout";
 
@@ -20,8 +21,8 @@ const getLayout = ({layout, path}: {layout: LayoutsName; path: string}) => {
     return HomeLayout;
 };
 
-const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: any}>) => {
-    const SubLayout = getLayout(frontMatter);
+const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: Frontmatter}>) => {
+    const SubLayout = getLayout(frontMatter as any);
 
     return (
         <Box pt="30px" p="40px 10px" m="0 auto" maxW="900px" minH="100vh">

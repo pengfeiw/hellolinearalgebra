@@ -1,11 +1,12 @@
 ---
-title: 你好，线性代数
-description: End-to-end encrypted applications use cryptographic keys that don't leave the client, so how do we store them securely in the browser ?
+title: 矩阵
+description: 矩阵入门，一阶矩阵，二阶矩阵
+keywords: 矩阵,矩阵的定义,矩阵的几何意义
 ---
 
-## 向量
+## 矩阵
 
-dddd
+矩阵是什么？
 
 ```typescript
 const msg = "Hello, The man";

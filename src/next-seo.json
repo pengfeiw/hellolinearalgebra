@@ -1,0 +1,29 @@
+{
+    "titleTemplate": "%s | 你好，线性代数",
+    "description": "你好，线性代数。",
+    "additionalMetaTags": [
+        {
+            "property": "author",
+            "content": "王鹏飞"
+        },
+        {
+            "property": "keywords",
+            "content": "线性代数,向量,矩阵,行列式,线性方程组,计算机图形学,三维变换,矩阵变换,投影,旋转,平移,向量点积,向量叉积,向量乘积"
+        }
+    ],
+    "twitter": {
+        "cardType": "summary_large_image",
+        "site": "http://www.pengfeixc.com",
+        "title": "王鹏飞的个人网站",
+        "description": "程序员，前端开发，计算机图形学爱好者。"
+    },
+    "openGraph": {
+        "type": "website",
+        "locale": "zh-CN",
+        "site_name": "王鹏飞",
+        "profile": {
+            "firstName": "Pengfei",
+            "lastName": "Wang"
+        }
+    }
+}

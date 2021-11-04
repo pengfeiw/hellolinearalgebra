@@ -1,6 +1,7 @@
 ---
 title: 关于线性代数
-description: End-to-end encrypted applications use cryptographic keys that don't leave the client, so how do we store them securely in the browser ?
+description: 线性代数的历史，介绍
+keywords: 线性代数,向量,矩阵,行列式,线性方程组
 ---
 
 ## About
