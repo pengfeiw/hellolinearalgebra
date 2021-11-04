@@ -1,5 +1,5 @@
 ---
-title: 你好，线性代数
+title: 你好，线性代数🖐
 description: 这是一本关于入门计算机图形学的线性代数基础教程。主要介绍向量、行列式和矩阵的几何意义，例如向量的点积和叉积，矩阵的变换，行列式的意义。如果你对图形学感兴趣，却缺乏一些数学知识，又没有时间去学习其他复杂的线性代数中繁杂的计算，那么你来对地方了，这本书应该非常适合你。
 ---
 
@@ -7,10 +7,6 @@ import CoordinateModel from "src/components/article/index/coordinate";
 import {GithubLink} from "src/components/githubLink";
 import {ColorModeSwitch} from "src/components/colorModeSwitch";
 import {AccentPicker} from "src/components/accent";
-
-# 你好，线性代数🖐
-
-这是一本关于入门计算机图形学的线性代数基础教程。主要介绍向量、行列式和矩阵的几何意义，如果你对图形学感兴趣，却缺乏一些数学知识，又没有时间去学习其他复杂的线性代数中繁杂的计算，那么你来对地方了，这本书应该非常适合你。
 
 ## 介绍
 
@@ -21,13 +17,13 @@ import {AccentPicker} from "src/components/accent";
 
 *本书中所有坐标系中的红色代表X轴，绿色代表Y轴，蓝色代表Z轴*
 
-本书的内容包括：
+<!-- 本书的内容包括：
 - 向量和向量的运算
 - 行列式和行列式的运算
 - 矩阵和矩阵的运算
 - 向量、行列式和矩阵的关系
 - 矩阵与线性方程的关系
-- 线性变换
+- 线性变换 -->
 
 所以读完本教程，你应该能了解到以上知识。本教程文档及网站代码开源。文档采用知识共享4.0许可证。除商业用途外，你可以自由的使用本站资源，不需要额外支付任何费用和通知我，前提是必须保持署名（“作者：王鹏飞 原文地址：[https://pengfeiw.github.io/hellolinearalgebra](https://pengfeiw.github.io/hellolinearalgebra)”）和采用相同方式共享。
 
