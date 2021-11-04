@@ -21,8 +21,6 @@ const getLayout = ({layout, path}: {layout: LayoutsName; path: string}) => {
 };
 
 const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: any}>) => {
-    console.log("frontMatter", frontMatter);
-
     const SubLayout = getLayout(frontMatter);
 
     return (

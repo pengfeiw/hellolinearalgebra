@@ -23,8 +23,14 @@ const getAllPosts = () => {
     for (let i = 0; i < files.length; i++) {
         const frontMatter = yaml.loadAll(nodeFs.readFileSync(nodePath.resolve(postsDir, files[i])))[0];
         posts.push({
-            path: files[i],
+            path: files[i].slice(0, files[i].lastIndexOf(".")),
             title: frontMatter.title
+        });
+        posts.sort((post1, post2) => {
+            const post1Index = post1.path.slice(0, post1.path.indexOf("-"));
+            const post2Index = post2.path.slice(0, post2.path.indexOf("-"));
+
+            return parseInt(post1Index) - parseInt(post2Index);
         })
     }
     return posts;
@@ -44,7 +50,7 @@ module.exports = withPlugins([
                 const pagesDir = nodePath.resolve(__dirname, "src/pages")
                 const path = ("/" + frontMatter.__resourcePath)
                     .replace(pagesDir, "")
-                    .replace(".mdx", "")
+                    .replace(/\.mdx?/, "")
                     .replace(".tsx", "")
                     .replace(/^\/index$/, "/")
                     .replace(/\/index$/, "");
