@@ -12,6 +12,8 @@ const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: F
     const linkColor = useLinkColor();
     const router = useRouter();
     const prePath = router.asPath.slice(0, router.asPath.lastIndexOf("/"));
+    console.log("router.asPath", router.asPath);
+    console.log("prePath", prePath);
 
     return (
         <>
