@@ -4,9 +4,13 @@ import {Box, Text} from "@chakra-ui/react";
 import {H1} from "src/components/primitives/typography";
 import {RouteLink} from "src/components/link";
 import {useLinkColor} from "src/ui/theme";
+import {useRouter} from "next/router";
 
 const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: any}>) => {
     const linkColor = useLinkColor();
+    const router = useRouter();
+    const prePath = router.asPath.slice(0, router.asPath.lastIndexOf("/"));
+
     return (
         <Box pt="30px" pb="40px" m="0 auto" maxW="900px" minH="100vh">
             <Header />
@@ -18,7 +22,7 @@ const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: a
             {
                 frontMatter.allPosts.map((post: {path: string; title: string;}) => (
                     <Box key={post.path} mt="10px">
-                        <RouteLink to={`chapters/${post.path}`} color={linkColor}>
+                        <RouteLink to={`${prePath}/chapters/${post.path}`} color={linkColor}>
                             {post.title}
                         </RouteLink>
                     </Box>
