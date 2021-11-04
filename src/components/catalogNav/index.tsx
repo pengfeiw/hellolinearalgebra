@@ -36,21 +36,17 @@ const CatalogNav: FC<Props> = (props) => {
         setCatalogOpen(true);
     };
 
-    // console.log("-----router-----");
-    // console.log(router);
-
     const currentIndex = catalogs.findIndex((item) => item.path === path);
-    const prePath = router.asPath.slice(0, router.asPath.lastIndexOf("/"));
     return (
         <>
             <HStack position="sticky" top="0" bg={colorMode === "light" ? "white" : "var(--chakra-colors-gray-800)"}>
                 <HamburgerIcon onClick={openCatalog} h="25" w="25" cursor="pointer" _hover={{color: useLinkColor()}} />
                 <HStack justifyContent="space-between" flexGrow={2}>
                     {
-                        currentIndex > 0 ? <RouteLink to={`${prePath}/${catalogs[currentIndex - 1].path}`}>上一节</RouteLink> : <></>
+                        currentIndex > 0 ? <RouteLink to={`${process.env.NEXT_PUBLIC_BASE_URL}chapters/${catalogs[currentIndex - 1].path}`}>上一节</RouteLink> : <></>
                     }
                     {
-                        currentIndex < catalogs.length - 1 ? <RouteLink to={`${prePath}/${catalogs[currentIndex + 1].path}`}>下一节</RouteLink> : <></>
+                        currentIndex < catalogs.length - 1 ? <RouteLink to={`${process.env.NEXT_PUBLIC_BASE_URL}chapters/${catalogs[currentIndex + 1].path}`}>下一节</RouteLink> : <></>
                     }
                 </HStack>
             </HStack>
@@ -68,7 +64,7 @@ const CatalogNav: FC<Props> = (props) => {
                             catalogs.map((item) => (
                                 <Box key={item.path} mb="10px">
                                     <RouteLink
-                                        to={`${prePath}/${item.path}`}
+                                        to={`${process.env.NEXT_PUBLIC_BASE_URL}chapters/${item.path}`}
                                         color={path === item.path ? activeColor : ""}
                                     >
                                         {item.title}

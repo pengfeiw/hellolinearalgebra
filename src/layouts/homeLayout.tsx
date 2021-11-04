@@ -4,18 +4,13 @@ import {Box, Text} from "@chakra-ui/react";
 import {H1} from "src/components/primitives/typography";
 import {RouteLink} from "src/components/link";
 import {useLinkColor} from "src/ui/theme";
-import {useRouter} from "next/router";
 import {Frontmatter} from "src/components/types";
 import {NextSeo} from "next-seo";
 
 const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: Frontmatter}>) => {
     const linkColor = useLinkColor();
-    const router = useRouter();
-    const prePath = router.asPath[router.asPath.length - 1] === "/" ? 
-        router.asPath.slice(0, router.asPath.length - 1) : router.asPath;
 
-    console.log(router.asPath);
-    console.log(prePath);
+    console.log("process.env.NEXT_PUBLIC_BASE_URL", process.env.NEXT_PUBLIC_BASE_URL);
 
     return (
         <>
@@ -33,7 +28,7 @@ const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: F
                 {
                     frontMatter.allPosts.map((post: {path: string; title: string;}) => (
                         <Box key={post.path} mt="10px">
-                            <RouteLink to={`${prePath}/chapters/${post.path}`} color={linkColor}>
+                            <RouteLink to={`${process.env.NEXT_PUBLIC_BASE_URL}chapters/${post.path}`} color={linkColor}>
                                 {post.title}
                             </RouteLink>
                         </Box>
