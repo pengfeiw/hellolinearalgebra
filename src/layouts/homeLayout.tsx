@@ -11,9 +11,11 @@ import {NextSeo} from "next-seo";
 const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: Frontmatter}>) => {
     const linkColor = useLinkColor();
     const router = useRouter();
-    const prePath = router.asPath.slice(0, router.asPath.lastIndexOf("/"));
-    console.log("router.asPath", router.asPath);
-    console.log("prePath", prePath);
+    const prePath = router.asPath[router.asPath.length - 1] === "/" ? 
+        router.asPath.slice(0, router.asPath.length - 1) : router.asPath;
+
+    console.log(router.asPath);
+    console.log(prePath);
 
     return (
         <>
