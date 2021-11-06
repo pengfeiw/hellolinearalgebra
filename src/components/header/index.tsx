@@ -9,12 +9,12 @@ import {OutgoingLink} from "src/components/link";
 const Header: React.FC = () => {
     return (
         <Flex flexDirection="row" justifyContent="space-between" mb="40px" wrap="wrap" gridRowGap="15px" gridColumnGap="15px">
-            <HStack alignItems="end" gridColumnGap="10px">
-                <OutgoingLink href="http://www.pengfeixc.com" target="_blank">
+            <OutgoingLink href="https://pengfeiw.github.io/hellolinearalgebra/" target="_blank">
+                <HStack alignItems="end">
                     <AvatarSvg />
-                </OutgoingLink>
-                <Text fontSize="17px" fontWeight="bold">你好，线性代数</Text>
-            </HStack>
+                    <Text fontSize="17px" fontWeight="bold">你好，线性代数</Text>
+                </HStack>
+            </OutgoingLink>
             <HStack>
                 <GithubLink />
                 <AccentPicker
