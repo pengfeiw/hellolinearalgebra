@@ -19,7 +19,7 @@ const createPlane = (axisLen = 100, markLen = 100, twoMarkPlane = false, axisCol
     const axisMaterial = new THREE.LineBasicMaterial({color: axisColor});
     const axisGeometry = new THREE.BufferGeometry().setFromPoints([axisPointLeft, axisPointRight]);
     const axisLine = new THREE.Line(axisGeometry, axisMaterial);
-    const arrowGeometry = new THREE.CylinderGeometry(0, 0.5, 1);
+    const arrowGeometry = new THREE.CylinderGeometry(0, 0.25, 1);
     const arrowMaterial = new THREE.MeshBasicMaterial({color: axisColor});
     const arrow = new THREE.Mesh(arrowGeometry, arrowMaterial);
     arrow.rotation.z = -THREE.MathUtils.degToRad(90);

@@ -14,10 +14,11 @@ const CoordinateModel = () => {
         // coordinateBuilder.markLen = 1;
         const coordinate = coordinateBuilder.createPlaneXYZ();
         coordinate.rotation.x = Math.PI / 180 * 30;
-        coordinate.rotation.y = -Math.PI / 180 * 45;
+        // coordinate.rotation.y = -Math.PI / 180 * 45;
         setCoordinate(coordinate);
 
         const basicWorld = new BasicWorld();
+        basicWorld.bgColor = "black";
         basicWorld.camera.position.z = 20;
         setWorld(basicWorld);
     }, []);
