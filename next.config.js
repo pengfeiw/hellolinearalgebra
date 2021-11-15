@@ -4,6 +4,7 @@ const nodePath = require("path");
 const nodeFs = require("fs");
 const yaml = require("js-yaml");
 const withPlugins = require("next-compose-plugins")
+const withTM = require("next-transpile-modules")(["three"]);
 
 const IsDevelopment = process.env.NODE_ENV === "development";
 const nextConfig = {
@@ -37,6 +38,7 @@ const getAllPosts = () => {
 };
 
 module.exports = withPlugins([
+    withTM,
     withMdxEnhanced({
         layoutPath: "src/layouts",
         defaultLayout: true,
