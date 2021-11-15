@@ -17,8 +17,7 @@ class MyDocument extends Document {
                 <body>
                     <Main />
                     <NextScript />
-                    <script src="http://fred-wang.github.io/mathml.css/mspace.js"></script>
-                    <script src="http://fred-wang.github.io/mathml-warning.js/mpadded-min.js"></script>
+                    <script src="https://fred-wang.github.io/mathml.css/mspace.js"></script>
                 </body>
             </Html>
         )

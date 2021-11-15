@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {OutgoingLink, RouteLink} from "src/components/link";
 import {
     Badge,
@@ -128,5 +129,14 @@ export const mdxComponents: any = {
     // Global scope:
     RouteLink,
     OutgoingLink: (p: any) => <OutgoingLink css={linkStyles} {...p} />,
-    img: (p: any) => <Image mb={8} rounded="md" {...p} />,
+    img: (p: any) => {
+        const chars = (process.env.NEXT_PUBLIC_BASE_URL + p.src).split("");
+        let src = "";
+        for (let i = 0; i < chars.length; i++) {
+            if (!(src.length > 0 && chars[i] === "/" && src[src.length - 1] === "/")) {
+                src += chars[i];
+            }
+        }
+        return <Image mb={8} rounded="md" alt="" {...p} src={src} />;
+    },
 }
