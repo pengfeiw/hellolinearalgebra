@@ -13,11 +13,14 @@ class MyDocument extends Document {
             <Html lang="zh-CN">
                 <Head>
                     <link rel="icon" href="/avatar.svg" />
+                    <link rel="stylesheet"
+                        type="text/css"
+                        href={process.env.NEXT_PUBLIC_ASSESTS_PREFIX ? process.env.NEXT_PUBLIC_ASSESTS_PREFIX + "/mathml.css" : "/mathml.css"}
+                    />
                 </Head>
                 <body>
                     <Main />
                     <NextScript />
-                    <script src="https://fred-wang.github.io/mathml.css/mspace.js"></script>
                 </body>
             </Html>
         )
