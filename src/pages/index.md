@@ -18,13 +18,13 @@ import {AccentPicker} from "src/components/accent";
 - 电子工程
 - 统计学
 
-所以从事这些专业的朋友，必须要掌握好线性代数，所以这个教程打算介绍线性代数中的几何意义。
+所以从事这些专业的朋友，必须要掌握好线性代数。这个教程的目的是介绍线性代数中的几何意义。
 
-很多学习线性代数的朋友，对线性代数的理解十分浅显，只会套用公式进行向量、行列式、矩阵的计算和解线性方程组，但是不能理解其中包含的更深层次的意义，而这个教程向大家介绍的就是线性代数在[计算机图形学](https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/279486)中的几何意义，它不会向大家介绍大学课本中关于线性代数那些复杂的计算，因为这些计算都可以通过工具进行计算，而我认为最重要的是理解。例如我在编程时，计算向量和矩阵会利用[glm](https://github.com/g-truc/glm)和[glMatrix](https://glmatrix.net/)这两个数学工具库帮我处理那些复杂的计算，而我所要做的就是理解其中的几何意义，选择合适的[函数](https://www.makeuseof.com/what-is-a-function-programming/)去处理图形。
+很多学习线性代数的朋友，对线性代数的理解十分浅显，只会套用公式进行向量、行列式、矩阵的计算和解线性方程组，但是不能理解其中包含的更深层次的意义，而这个教程向大家介绍的就是线性代数在[计算机图形学](https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/279486)中的几何意义，它不会向大家介绍大学课本中关于线性代数那些复杂的计算，因为这些计算都可以通过工具进行计算，我认为最重要的是理解它所代表的意义。例如我在编程时，计算向量和矩阵会利用[glm](https://github.com/g-truc/glm)和[glMatrix](https://glmatrix.net/)这两个数学工具库帮我处理那些复杂的计算，而我所要做的就是理解其中的几何意义，选择合适的[函数](https://www.makeuseof.com/what-is-a-function-programming/)去处理图形。
 
-数学是一门很难的学科，学习数学相关的知识时，能专注学习，并且能理解它是一件比较困难的事，所以为了提起大家的兴趣，课程中我会使用[ThreeJS](https://threejs.org/)构建demo展示给大家，类似下面的坐标系模型，希望这样可以激发大家的学习兴趣。
+数学是一门很难的学科，学习数学相关的知识时，能专注学习，并且能理解它是一件比较困难的事，为了提起大家的兴趣，课程中某些示例我会使用[ThreeJS](https://threejs.org/)和[canvas2d](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API)构建demo展示给大家，例如下面的使用threejs绘制的坐标系模型，希望这样可以激发大家的学习兴趣。
 
-可以通过鼠标操作模型（触屏设备可以通过手指操作），左键-旋转，右键-平移，滚轮-缩放。
+你可以通过鼠标操作模型（触屏设备可以通过手指操作），左键-旋转，右键-平移，滚轮-缩放。
 <CoordinateModel />
 
 *本书中所有坐标系中的红色代表X轴，绿色代表Y轴，蓝色代表Z轴*
@@ -34,7 +34,7 @@ import {AccentPicker} from "src/components/accent";
 
 ## 使用方法
 
-项目开源，可以点击右上角github图标（<GithubLink />）查看源代码，如果你支持本项目，欢迎star。
+项目开源，可以点击右上角github图标（<GithubLink />）查看源代码，如果你支持本项目，欢迎fork、star。
 
 本教程暂时关闭留言板功能，如果你要留言可以至我的个人网站给我留言也可以至github提交issue或者pr。
 
@@ -43,3 +43,7 @@ import {AccentPicker} from "src/components/accent";
 ## 关于网站
 
 如果你对本网站搭建的细节感兴趣，请点击[这里](https://www.pengfeixc.com/blogs/website/site-opensource)。
+
+## 联系
+
+Eamil: <a href="mailto:pengfeixc@sian.com">pengfeixc@sina.com</a>

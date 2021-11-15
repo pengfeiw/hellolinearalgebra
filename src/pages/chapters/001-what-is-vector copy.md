@@ -1,5 +1,5 @@
 ---
-title: 向量是什么
+title: 点和向量
 description: 线性代数的历史，介绍
 keywords: 向量,线性代数
 ---
