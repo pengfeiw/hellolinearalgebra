@@ -2,7 +2,7 @@ const readingTime = require("reading-time")
 const withMdxEnhanced = require("next-mdx-enhanced");
 const nodePath = require("path");
 const nodeFs = require("fs");
-const yaml = require("js-yaml");
+const yaml = require("gray-matter");
 const withPlugins = require("next-compose-plugins")
 const withTM = require("next-transpile-modules")(["three"]);
 
@@ -22,10 +22,12 @@ const getAllPosts = () => {
     const files = nodeFs.readdirSync(postsDir);
     const posts = [];
     for (let i = 0; i < files.length; i++) {
-        const frontMatter = yaml.loadAll(nodeFs.readFileSync(nodePath.resolve(postsDir, files[i])))[0];
+        // const frontMatter = yaml.loadAll(nodeFs.readFileSync(nodePath.resolve(postsDir, files[i])))[0];
+        const file = nodeFs.readFileSync(nodePath.resolve(postsDir, files[i]), "utf-8");
+        const frontMatter = yaml(file);
         posts.push({
             path: files[i].slice(0, files[i].lastIndexOf(".")),
-            title: frontMatter.title
+            title: frontMatter.data.title
         });
         posts.sort((post1, post2) => {
             const post1Index = post1.path.slice(0, post1.path.indexOf("-"));

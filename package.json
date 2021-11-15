@@ -19,7 +19,7 @@
         "@mdx-js/react": "^1.6.22",
         "@next/mdx": "^11.1.2",
         "framer-motion": "^4.1.17",
-        "js-yaml": "^4.1.0",
+        "gray-matter": "^4.0.3",
         "mdx-prism": "^0.3.4",
         "mitt": "^3.0.0",
         "moment": "^2.29.1",
