@@ -130,12 +130,9 @@ export const mdxComponents: any = {
     RouteLink,
     OutgoingLink: (p: any) => <OutgoingLink css={linkStyles} {...p} />,
     img: (p: any) => {
-        const chars = (process.env.NEXT_PUBLIC_BASE_URL + p.src).split("");
-        let src = "";
-        for (let i = 0; i < chars.length; i++) {
-            if (!(src.length > 0 && chars[i] === "/" && src[src.length - 1] === "/")) {
-                src += chars[i];
-            }
+        let src: string = p.src;
+        if (process.env.NEXT_PUBLIC_ASSESTS_PREFIX) {
+            src = process.env.NEXT_PUBLIC_ASSESTS_PREFIX + src;
         }
         return <Image mb={8} rounded="md" alt="" {...p} src={src} />;
     },
