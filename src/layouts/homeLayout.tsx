@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/header";
+import Footer from "src/components/footer";
 import {Box, Text} from "@chakra-ui/react";
 import {H1} from "src/components/primitives/typography";
 import {RouteLink} from "src/components/link";
@@ -35,6 +36,7 @@ const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: F
                     ))
                 }
                 {children}
+                <Footer />
             </Box>
         </>
     );

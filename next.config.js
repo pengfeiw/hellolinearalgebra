@@ -5,6 +5,7 @@ const nodeFs = require("fs");
 const yaml = require("gray-matter");
 const withPlugins = require("next-compose-plugins")
 const withTM = require("next-transpile-modules")(["three"]);
+const {createSitemap} = require("./sitemap");
 
 const IsDevelopment = process.env.NODE_ENV === "development";
 const nextConfig = {
@@ -17,12 +18,13 @@ const nextConfig = {
     // }
 }
 
+createSitemap();
+
 const getAllPosts = () => {
     const postsDir = nodePath.resolve(__dirname, "src/pages/chapters");
     const files = nodeFs.readdirSync(postsDir);
     const posts = [];
     for (let i = 0; i < files.length; i++) {
-        // const frontMatter = yaml.loadAll(nodeFs.readFileSync(nodePath.resolve(postsDir, files[i])))[0];
         const file = nodeFs.readFileSync(nodePath.resolve(postsDir, files[i]), "utf-8");
         const frontMatter = yaml(file);
         posts.push({
