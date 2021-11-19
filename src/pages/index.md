@@ -3,7 +3,7 @@ title: 你好，线性代数🖐
 description: 这是一本关于入门计算机图形学的线性代数基础教程。主要介绍向量、行列式和矩阵的几何意义，例如向量的点积和叉积，矩阵的变换，行列式的意义。如果你对图形学感兴趣，却缺乏一些数学知识，又没有时间去学习其他复杂的线性代数中繁杂的计算，那么你来对地方了，这本书应该非常适合你。
 ---
 
-import CoordinateModel from "src/components/article/index/coordinate";
+import CoordinateModel from "src/components/article/index/coordinate3d";
 import {GithubLink} from "src/components/githubLink";
 import {ColorModeSwitch} from "src/components/colorModeSwitch";
 import {AccentPicker} from "src/components/accent";
