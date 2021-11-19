@@ -14,6 +14,7 @@ export class BasicWorld {
     private _bgColor = "skyblue";
     private _camera = createCamera();
     private _renderer = createRenderer();
+    public autoRotate = false;
     public set bgColor(color: string) {
         this._bgColor = color;
     }
@@ -29,6 +30,7 @@ export class BasicWorld {
         container.append(this._renderer.domElement);
         const controls = createControls(this._camera, this._renderer.domElement);
         controls.enableDamping = true;
+        controls.autoRotate = this.autoRotate;
         scene.add(...meshs);
 
         const loop = new Loop(this._camera, scene, this._renderer);

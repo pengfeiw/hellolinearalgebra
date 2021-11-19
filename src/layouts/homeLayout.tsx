@@ -12,7 +12,7 @@ const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: F
     const linkColor = useLinkColor();
 
     // console.log("process.env.NEXT_PUBLIC_BASE_URL", process.env.NEXT_PUBLIC_BASE_URL);
-
+    const posts = frontMatter.allPosts.filter((post) => !post.hide);
     return (
         <>
             <NextSeo
@@ -27,7 +27,7 @@ const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: F
                     又没有时间去学习其他复杂的线性代数中繁杂的计算，那么你来对地方了，这本书应该非常适合你，本教程包含以下章节内容。
                 </Text>
                 {
-                    frontMatter.allPosts.map((post: {path: string; title: string;}) => (
+                    posts.map((post: {path: string; title: string;}) => (
                         <Box key={post.path} mt="10px">
                             <RouteLink to={`${process.env.NEXT_PUBLIC_BASE_URL}chapters/${post.path}`} color={linkColor}>
                                 {post.title}

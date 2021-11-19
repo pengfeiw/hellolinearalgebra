@@ -29,7 +29,7 @@ const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: F
                 ]}
             />
             <Header />
-            <CatalogNav catalogs={frontMatter.allPosts} />
+            <CatalogNav catalogs={frontMatter.allPosts.filter((post) => !post.hide)} />
             <H1>{frontMatter.title}</H1>
             {children}
         </>

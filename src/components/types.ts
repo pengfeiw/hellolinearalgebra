@@ -1,6 +1,7 @@
 export interface Post {
     path: string;
     title: string;
+    hide: boolean;
 }
 export interface Frontmatter {
     layout?: string;

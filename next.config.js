@@ -29,7 +29,8 @@ const getAllPosts = () => {
         const frontMatter = yaml(file);
         posts.push({
             path: files[i].slice(0, files[i].lastIndexOf(".")),
-            title: frontMatter.data.title
+            title: frontMatter.data.title,
+            hide: frontMatter.data.hide ? true : false
         });
         posts.sort((post1, post2) => {
             const post1Index = post1.path.slice(0, post1.path.indexOf("-"));
