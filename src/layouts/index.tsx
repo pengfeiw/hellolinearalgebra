@@ -3,6 +3,7 @@ import {Box} from "@chakra-ui/react";
 import ChaptersLayout from "./chaptersLayout";
 import HomeLayout from "./homeLayout";
 import {Frontmatter} from "src/components/types";
+import BackTop from "src/components/backtop";
 
 type LayoutsName = "chaptersLayout" | "homeLayout";
 
@@ -29,6 +30,7 @@ const Layout = ({children, frontMatter}: React.PropsWithChildren<{frontMatter: F
             <SubLayout frontMatter={frontMatter}>
                 {children}
             </SubLayout>
+            <BackTop />
         </Box>
     );
 };
