@@ -8,6 +8,8 @@ class WCanvas {
     public get canvas() {
         return this._canvas;
     }
+    public yAxisUp = true;
+    public bgColor = "black";
     public entities: IEntity[] = [];
     private _ctx: CanvasRenderingContext2D | null = null;
     private ctf = new CoordTransform();
@@ -37,7 +39,14 @@ class WCanvas {
             this._ctx = this._canvas.getContext("2d");
         }
         this._ctx!.clearRect(0, 0, this._canvas.clientWidth, this._canvas.clientHeight);
+        this._ctx!.fillStyle = this.bgColor;
+        this._ctx!.fillRect(0, 0, this._canvas.clientWidth, this._canvas.clientHeight);
         this.ctf.setCtx(this._ctx!);
+
+        if (this.yAxisUp) {
+            this._ctx!.scale(1, -1);
+        }
+
         this.entities.forEach((ent) => {
             ent.draw(this._ctx!, this.ctf)
         });
@@ -76,22 +85,13 @@ class WCanvas {
             }
         });
         this._canvas.addEventListener("wheel", (event) => {
+            event.preventDefault();
             this.ctf.zoom(new Vector2d(event.offsetX, event.offsetY), event.deltaY, event.deltaY);
             this.update();
         });
         this._canvas.addEventListener("dblclick", (event) => {
             if (event.button === 0) {
-
-                const viewport = new Rectangle(
-                    new Vector2d(this.viewAllMargin, this.viewAllMargin),
-                    new Vector2d(this.canvas.width - this.viewAllMargin, this.canvas.height - this.viewAllMargin)
-                );
-
-                this.ctf.viewAllInContainer(
-                    viewport,
-                    this.bound());
-
-                this.update();
+                this.viewAll();
             }
         });
     }
@@ -101,6 +101,19 @@ class WCanvas {
             bounds.push(this.entities[i].getBound());
         }
         return Rectangle.union(bounds);
+    }
+
+    public viewAll() {
+        const viewport = new Rectangle(
+            new Vector2d(this.viewAllMargin, this.viewAllMargin),
+            new Vector2d(this.canvas.width - this.viewAllMargin, this.canvas.height - this.viewAllMargin)
+        );
+
+        this.ctf.viewAllInContainer(
+            viewport,
+            this.bound());
+
+        this.update();
     }
 }
 

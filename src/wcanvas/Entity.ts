@@ -3,6 +3,7 @@ import Rectangle from "./Rectangle";
 import {measureText} from "./util";
 import Vector2d from "./Vector2d";
 import {TextType, TextDirection, TextBaseline, TextAlign} from "./type";
+import {getBoundOfPoints} from "./geometry";
 
 export interface IEntity {
     color: string;
@@ -40,7 +41,7 @@ abstract class Entity implements IEntity {
 class Line extends Entity {
     public start: Vector2d;
     public end: Vector2d;
-    public lineWidth = 1;
+    public lineWidth = 2;
     public constructor(start = new Vector2d(), end = new Vector2d()) {
         super();
         this.start = start;
@@ -55,24 +56,16 @@ class Line extends Entity {
         ctx.moveTo(p1.x, p1.y);
         ctx.lineTo(p2.x, p2.y);
 
-        // draw fixed line width
+        const lw = ctx.lineWidth;
         ctx.lineWidth /= ctf.scaleX;
         ctx.stroke();
-        ctx.lineWidth *= ctf.scaleX;
+        ctx.lineWidth = lw;
     }
 
     public getBound(): Rectangle {
-        const minx = Math.min(this.start.x, this.end.x);
-        const miny = Math.min(this.start.y, this.end.y);
-        const maxx = Math.max(this.start.x, this.end.x);
-        const maxy = Math.max(this.start.y, this.end.y);
-        return new Rectangle(
-            new Vector2d(minx, miny),
-            new Vector2d(maxx, maxy)
-        );
+        return getBoundOfPoints(this.start, this.end);
     }
 }
-
 
 class Text extends Entity {
     public text: string;
@@ -153,5 +146,75 @@ class Text extends Entity {
     }
 }
 
-export {Line, Text};
+class Polyline extends Entity {
+    public vertex: Vector2d[] = [];
+    public closed = false;
+    public stroked = true;
+    public filled = false;
+    public fillColor = "white";
+    public lineWidth = 2;
+    public get strokeColor() {
+        return this.color;
+    }
+
+    /**
+     * whether this polyline is closed.
+     */
+    public get circled() {
+        if (this.vertex.length <= 2) {
+            return false;
+        }
+        if (Vector2d.equal(this.vertex[this.vertex.length - 1], this.vertex[0])) {
+            return true;
+        }
+        if (this.closed) {
+            return true;
+        }
+        return false;
+    }
+    public constructor(...vertex: Vector2d[]) {
+        super();
+        this.vertex = vertex;
+    }
+    public drawContent(ctx: CanvasRenderingContext2D, ctf: CoordTransform): void {
+        if (this.vertex.length <= 1) {
+            return;
+        }
+
+        ctx.beginPath();
+
+        ctx.strokeStyle = this.strokeColor;
+        ctx.fillStyle = this.fillColor;
+        ctx.lineWidth = this.lineWidth;
+
+        ctx.moveTo(this.vertex[0].x, this.vertex[0].y);
+
+        for (let i = 1; i < this.vertex.length; i++) {
+            ctx.lineTo(this.vertex[i].x, this.vertex[i].y);
+        }
+
+        if (this.closed) {
+            ctx.closePath();
+        }
+
+        // stroke
+        if (this.stroked) {
+            const lw = ctx.lineWidth;
+            ctx.lineWidth /= ctf.scaleX;
+            ctx.stroke();
+            ctx.lineWidth = lw;
+        }
+
+        // fill
+        if (this.filled && this.circled) {
+            ctx.fill();
+        }
+    }
+
+    getBound(): Rectangle {
+        return getBoundOfPoints(...this.vertex);
+    }
+}
+
+export {Line, Text, Polyline};
 export default Entity;

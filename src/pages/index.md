@@ -7,6 +7,7 @@ import CoordinateModel from "src/components/article/index/coordinate3d";
 import {GithubLink} from "src/components/githubLink";
 import {ColorModeSwitch} from "src/components/colorModeSwitch";
 import {AccentPicker} from "src/components/accent";
+import CoordinateModel2d from "src/components/article/index/coordinate2d";
 
 ## 介绍
 
@@ -26,7 +27,7 @@ import {AccentPicker} from "src/components/accent";
 
 你可以通过鼠标操作模型（触屏设备可以通过手指操作），左键-旋转，右键-平移，滚轮-缩放。
 <CoordinateModel />
-
+<CoordinateModel2d />
 *本书中所有坐标系中的红色代表X轴，绿色代表Y轴，蓝色代表Z轴*
 
 本教程文档及网站代码开源。文档采用知识共享4.0许可证。除商业用途外，你可以自由的使用本站资源，不需要额外支付任何费用和通知我，前提是必须保持署名（“作者：王鹏飞 原文地址：[https://pengfeiw.github.io/hellolinearalgebra](https://pengfeiw.github.io/hellolinearalgebra)”）和采用相同方式共享。
