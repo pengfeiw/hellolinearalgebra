@@ -39,7 +39,7 @@ const CatalogNav: FC<Props> = (props) => {
     const currentIndex = catalogs.findIndex((item) => item.path === path);
     return (
         <>
-            <HStack position="sticky" top="0" bg={colorMode === "light" ? "white" : "var(--chakra-colors-gray-800)"}>
+            <HStack position="sticky" top="0" p="10px 0" bg={colorMode === "light" ? "white" : "var(--chakra-colors-gray-800)"} zIndex="1">
                 <HamburgerIcon onClick={openCatalog} h="25" w="25" cursor="pointer" _hover={{color: useLinkColor()}} />
                 <HStack justifyContent="space-between" flexGrow={2}>
                     {
