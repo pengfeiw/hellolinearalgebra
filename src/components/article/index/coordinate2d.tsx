@@ -1,8 +1,8 @@
 import React, {useRef, useEffect} from "react";
 import Coordinate from "src/wcanvas/components/coordinate";
 import WCanvas from "src/wcanvas/WCanvas";
-import {Box} from "@chakra-ui/react";
 import Entity from "src/wcanvas/Entity";
+import DemoBox from "src/components/demoBox";
 
 const CoordinateModel = () => {
     const [entities, setEntities] = React.useState<Entity[]>([]);
@@ -24,13 +24,9 @@ const CoordinateModel = () => {
     }, [canvasRef, entities]);
 
     return (
-        <Box
-            h="500px"
-            mt="20px"
-            mb="20px"
-        >
+        <DemoBox>
             <canvas ref={canvasRef} style={{height: "100%", width: "100%"}} />
-        </Box>
+        </DemoBox>
     );
 };
 

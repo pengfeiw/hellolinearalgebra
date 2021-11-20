@@ -3,6 +3,7 @@ import React, {useRef, useEffect} from "react";
 import {CoordinateBuilder} from "src/three/components/coordinate";
 import {BasicWorld} from "src/three/world";
 import {Box} from "@chakra-ui/react";
+import DemoBox from "src/components/demoBox";
 
 const CoordinateModel = () => {
     const [coordinate, setCoordinate] = React.useState<THREE.Group>();
@@ -30,10 +31,9 @@ const CoordinateModel = () => {
     }, [containerRef, world, coordinate]);
 
     return (
-        <Box
-            ref={containerRef}
-            h="500px"
-        />
+        <DemoBox>
+            <Box ref={containerRef} h="100%" w="100%" />
+        </DemoBox>
     );
 };
 
