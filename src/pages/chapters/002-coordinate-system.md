@@ -59,6 +59,42 @@ keywords: 坐标系,笛卡尔坐标系,二维坐标系,三维坐标系,极坐标
 
 其实当处理旋转时，使用极坐标比笛卡尔坐标更加方便，下面我们一起看一看极坐标。
 
-## 极坐标
+## 极坐标系
 
-未完待续...
+极坐标属于二维坐标系统，创始人是[牛顿](https://baike.baidu.com/item/%E7%89%9B%E9%A1%BF/5463)。在平面内取一点O，叫**极点**，引一条射线OX，叫做极轴，经过O点画一条线段OA，OA与极轴有一个夹角<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#x3b8;</mi></math>，OA的长度为l，那么此时A点的极坐标为:
+
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#xff08;</mi><mi>l</mi><mo>,</mo><mi>&#x3b8;</mi><mi>&#xff09;</mi></math>
+
+![极坐标](/images/002-5.jpg)
+
+极坐标系的定义十分简单。一般情况下，极轴由极点O水平向右，角度的正方向极轴的逆时针方向，但是你可以将极轴定义成任意方向，并且角度的正方向可以是逆时针也可以是顺时针。
+
+### 极坐标在旋转中的应用
+
+由于极坐标的定义由长度和角度定义`(length, angle)`，所以在计算旋转时十分方便，例如极坐标点<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#xff08;</mi><mi>l</mi><mo>,</mo><mi>&#x3b8;</mi><mi>&#xff09;</mi></math>旋转<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#x3b1;</mi></math>角度后，坐标为<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#xff08;</mi><mi>l</mi><mo>,</mo><mi>&#x3b8;</mi><mo>&#xA0;</mo><mo>+</mo><mo>&#xA0;</mo><mi>&#x3b1;</mi><mi>&#xff09;</mi></math>。
+
+可能有的人会问了，平时我们用的都是笛卡尔坐标系，那么如何计算笛卡尔坐标系中的某个点，旋转<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#x3b1;</mi></math>角度后的笛卡尔坐标系呢？
+
+其实，只需要将笛卡尔坐标系转化成极坐标，然后将极坐标的角度值进行加减得到旋转后的极坐标，最后再转换成笛卡尔坐标系即可。
+
+而笛卡尔和极坐标的转换十分简单，只需要利用简单的三角函数即可计算，你可以尝试自己在草稿本上计算。下面我直接给出图解计算过程。
+
+![极坐标与笛卡尔坐标系的转换](/images/002-6.jpg)
+
+如图，点A的极坐标为<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#xff08;</mi><mi>l</mi><mo>,</mo><mi>&#x3b8;</mi><mi>&#xff09;</mi></math>，所以OA的长度为l，AOX的角度为<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#x3b8;</mi></math>，由三角函数很容易得到x和y的值。
+
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mo>&#xA0;</mo><mo>=</mo><mo>&#xA0;</mo><mi>sin</mi><mfenced><mi>&#x3b8;</mi></mfenced><mo>&#xA0;</mo><mo>*</mo><mo>&#xA0;</mo><mi>l</mi></math>
+<br />
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi><mo>&#xA0;</mo><mo>=</mo><mo>&#xA0;</mo><mi>c</mi><mi>o</mi><mi>s</mi><mfenced><mi>&#x3b8;</mi></mfenced><mo>&#xA0;</mo><mo>*</mo><mo>&#xA0;</mo><mi>l</mi></math>
+
+从笛卡尔坐标系转换为极坐标，即通过x和y，求l和<math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="bold-italic">&#x3b8;</mi></math>。
+
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="bold-italic">l</mi><mo>&#xA0;</mo><mo>=</mo><mo>&#xA0;</mo><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>&#xa0;</mo><mo>+</mo><mo>&#xa0;</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></msqrt></math>
+<br />
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">&#x3b8;</mi><mo>&#xA0;</mo><mo>=</mo><mo>&#xA0;</mo><msup><mi>tan</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mfenced><mrow><mo>(</mo><mi mathvariant="normal">y</mi><mo>&#xA0;</mo><mo>/</mo><mo>&#xA0;</mo><mi mathvariant="normal">x</mi><mo>)</mo></mrow></mfenced><mspace linebreak="newline"/></math>
+
+极坐标对于求解旋转相关的问题十分方便，我在[矩阵证明（一）](https://pengfeixc.com/blogs/computer-graphics/3D-matrix-transformation-part-two)中计算旋转矩阵中，就用到了极坐标。
+
+
+
+（完）
