@@ -94,7 +94,3 @@ keywords: 坐标系,笛卡尔坐标系,二维坐标系,三维坐标系,极坐标
 <math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">&#x3b8;</mi><mo>&#xA0;</mo><mo>=</mo><mo>&#xA0;</mo><msup><mi>tan</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mfenced><mrow><mo>(</mo><mi mathvariant="normal">y</mi><mo>&#xA0;</mo><mo>/</mo><mo>&#xA0;</mo><mi mathvariant="normal">x</mi><mo>)</mo></mrow></mfenced><mspace linebreak="newline"/></math>
 
 极坐标对于求解旋转相关的问题十分方便，我在[矩阵证明（一）](https://pengfeixc.com/blogs/computer-graphics/3D-matrix-transformation-part-two)中计算旋转矩阵中，就用到了极坐标。
-
-
-
-（完）
