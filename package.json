@@ -2,6 +2,11 @@
     "name": "pengfeixc.com",
     "version": "0.1.0",
     "private": true,
+    "author": "Wang Pengfei <pengfeixc@sina.com> (http://pengfeixc.com/)",
+    "homepage": "https://pengfeiw.github.io/hellolinearalgebra",
+    "bugs": "https://github.com/pengfeiw/hellolinearalgebra/issues",
+    "description": "适用于计算机图形学的线性代数教程",
+    "keywords": ["线性代数", "数学", "矩阵", "向量", "linear algebra"],
     "scripts": {
         "dev": "next dev -p 3100",
         "dev:debug": "node --inspect-brk=9300 ./node_modules/next/dist/bin/next -p 3100",
